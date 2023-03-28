@@ -4,7 +4,6 @@ import Login from "./login";
 import Sidebar from "../layout/index";
 export const AuthContext = React.createContext({});
 const PagesView = () => {
-  const [user, setUser] = React.useState("s");
   return (
     <AuthContext.Provider value={{}}>
       <BrowserRouter>

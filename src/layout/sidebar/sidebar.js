@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../layout.scss";
 import { useNavigate } from "react-router-dom";

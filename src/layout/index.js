@@ -1,4 +1,4 @@
-import React,{Suspense} from "react";
+import React, { Suspense } from "react";
 import Header from "./header/header";
 import Sidebar from "./sidebar/sidebar";
 import "./layout.scss";
@@ -14,6 +14,7 @@ const Layout = () => {
       <Header toggleMenu={toggleMenu} />
 
       <Sidebar view={view} handleView={toggleMenu} routes={routes} />
+
       <Suspense fallback={<div>Cargando...</div>}>
         <Routes>
           {routes.map((route, idx) => (
