@@ -2,8 +2,8 @@ import React from 'react';
 
 import PagesView from './pages';
 
-function App() {
+const App = () => {
   return <PagesView />;
-}
+};
 
 export default App;

@@ -15,7 +15,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', 'react-hooks', 'prettier'],
+  plugins: ['react', 'react-hooks', 'prettier', 'no-unsanitized'],
   rules: {
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
