@@ -12,7 +12,6 @@ const PagesView = () => {
           <>
             <Route path="/" element={<Login />} />
             <Route path="/login" element={<Login />} />
-
             <Route path="/*" element={<Sidebar />} />
             <Route path="*" element={<Navigate to="/" replace={true} />} />
           </>
