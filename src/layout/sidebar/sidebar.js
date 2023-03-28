@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 const Sidebar = ({ view = false, handleView, routes }) => {
   const navigate = useNavigate();
+  console.log("")
   return (
     <>
       <Offcanvas show={view} onHide={() => handleView()}>
