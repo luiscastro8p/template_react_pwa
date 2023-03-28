@@ -1,10 +1,9 @@
 import React from "react";
-import Layout from "./layout";
+
+import PagesView from "./pages";
 
 function App() {
-  return (
-    <Layout />
-  );
+  return <PagesView />;
 }
 
 export default App;

@@ -4,8 +4,10 @@ import Navbar from "react-bootstrap/Navbar";
 import logo from "../../images/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GoSignOut } from "react-icons/go";
+import { useNavigate } from "react-router-dom";
 import "../layout.scss";
 const Header = ({ toggleMenu }) => {
+  const navigate = useNavigate();
   return (
     <Navbar bg="dark" variant="dark">
       <Container className="header">
@@ -22,7 +24,7 @@ const Header = ({ toggleMenu }) => {
           />
           React Bootstrap
         </Navbar.Brand>
-        <Navbar.Brand>
+        <Navbar.Brand onClick={() => navigate(`/login`)}>
           <GoSignOut />
         </Navbar.Brand>
       </Container>

@@ -1,17 +1,33 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "../layout.scss";
+import { useNavigate } from "react-router-dom";
 
-const Sidebar = ({ view = false, handleView }) => {
+import Nav from "react-bootstrap/Nav";
+const Sidebar = ({ view = false, handleView, routes }) => {
+  const navigate = useNavigate();
   return (
     <>
       <Offcanvas show={view} onHide={() => handleView()}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          <Offcanvas.Title>Sidebar</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+        <Offcanvas.Body className="p-0">
+          <Nav defaultActiveKey="/home" className="flex-column">
+            {routes.map((route, idx) => {
+              return (
+                <Nav.Link
+                  href={route.path}
+                  className="item-link"
+                  key={`link-${idx}`}
+                  onClick={() => navigate(`${route.path}`)}
+                >
+                  {route.title}
+                  {route.icon}
+                </Nav.Link>
+              );
+            })}
+          </Nav>
         </Offcanvas.Body>
       </Offcanvas>
     </>
