@@ -1,5 +1,9 @@
 import React from 'react';
 
-const HomeView = () => <div>hola soy el home</div>;
+const HomeView = () => {
+  console.log('entro');
+
+  return <div>hola soy el home</div>;
+};
 
 export default HomeView;

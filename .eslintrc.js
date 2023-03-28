@@ -17,6 +17,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', 'prettier', 'no-unsanitized'],
   rules: {
+    'no-console': ['error', { allow: ['warn', 'error'] }],
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
     'react/prop-types': [0],

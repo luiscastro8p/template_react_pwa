@@ -5,19 +5,21 @@ import Sidebar from '../layout/index';
 
 export const AuthContext = React.createContext({});
 
-const PagesView = () => (
-  <AuthContext.Provider>
-    <BrowserRouter>
-      <Routes>
-        <>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/*" element={<Sidebar view={false} />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </>
-      </Routes>
-    </BrowserRouter>
-  </AuthContext.Provider>
-);
+const PagesView = () => {
+  return (
+    <AuthContext.Provider>
+      <BrowserRouter>
+        <Routes>
+          <>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/*" element={<Sidebar view={false} />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </>
+        </Routes>
+      </BrowserRouter>
+    </AuthContext.Provider>
+  );
+};
 
 export default PagesView;
