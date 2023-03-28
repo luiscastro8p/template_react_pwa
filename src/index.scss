@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'myFirstFont';
+    src: url(../public/WalkwaySemiBold.ttf);
+}
+body{
+    font-family: 'myFirstFont';
+}
+
 $gray-darker: #232735;
 $gray-dark: #3a3f51;
 $gray: #dde6e9;

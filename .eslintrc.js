@@ -16,6 +16,7 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: ['react', 'react-hooks', 'prettier', 'no-unsanitized'],
+  ignorePatterns: ['serviceWorkerRegistration.js'],
   rules: {
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'arrow-body-style': 'off',

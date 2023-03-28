@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './header/header';
 import Sidebar from './sidebar/sidebar';
 import './layout.scss';
-import { routes } from '../routes';
+import routes from '../routes';
 
 const Layout = () => {
   const [view, setView] = React.useState(false);
