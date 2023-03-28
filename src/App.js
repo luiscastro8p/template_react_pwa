@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import PagesView from "./pages";
+import PagesView from './pages';
 
 function App() {
   return <PagesView />;

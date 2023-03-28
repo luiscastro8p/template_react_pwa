@@ -1,11 +1,12 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import logo from "../../images/logo.png";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { GoSignOut } from "react-icons/go";
-import { useNavigate } from "react-router-dom";
-import "../layout.scss";
+import React from 'react';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { GoSignOut } from 'react-icons/go';
+import { useNavigate } from 'react-router-dom';
+import logo from '../../images/logo.png';
+import '../layout.scss';
+
 const Header = ({ toggleMenu }) => {
   const navigate = useNavigate();
   return (

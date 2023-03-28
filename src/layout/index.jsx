@@ -1,9 +1,9 @@
-import React, { Suspense } from "react";
-import Header from "./header/header";
-import Sidebar from "./sidebar/sidebar";
-import "./layout.scss";
-import { Route, Routes } from "react-router-dom";
-import { routes } from "../routes";
+import React, { Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Header from './header/header';
+import Sidebar from './sidebar/sidebar';
+import './layout.scss';
+import { routes } from '../routes';
 
 const Layout = () => {
   const [view, setView] = React.useState(false);
@@ -17,12 +17,8 @@ const Layout = () => {
 
       <Suspense fallback={<div>Cargando...</div>}>
         <Routes>
-          {routes.map((route, idx) => (
-            <Route
-              path={route.path}
-              key={`route-${idx}`}
-              element={route.element}
-            />
+          {routes.map((route) => (
+            <Route path={route.path} key={route.path} element={route.element} />
           ))}
         </Routes>
       </Suspense>

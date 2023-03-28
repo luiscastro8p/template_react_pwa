@@ -1,21 +1,34 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es2021: true
   },
   extends: [
     'plugin:react/recommended',
     'airbnb',
+    'plugin:jsx-a11y/recommended',
+    'plugin:react-hooks/recommended',
+    'prettier'
   ],
-  overrides: [
-  ],
+  overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module',
+    sourceType: 'module'
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
-  },
+    'arrow-body-style': 'off',
+    'prefer-arrow-callback': 'off',
+    'react/prop-types': [0],
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/no-unstable-nested-components': ['off'],
+    'react/function-component-definition': [
+      1,
+      {
+        namedComponents: ['arrow-function'],
+        unnamedComponents: ['arrow-function']
+      }
+    ]
+  }
 };
