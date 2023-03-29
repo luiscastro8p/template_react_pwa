@@ -27,3 +27,23 @@ $dark: #0d415d;
 $info: #976F4F;
 $warning: #ff902b;
 $danger: #FF0000;
+
+.btn-primary {
+    background-color: $primary;
+    color: white;
+    border-color: $primary;
+}
+button{
+    font-size: 10px!important;
+
+}
+.btn-primary:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: white;
+
+}
+
+input{
+    font-size: 10px!important;
+}

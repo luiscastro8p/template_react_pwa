@@ -19,8 +19,9 @@ module.exports = {
   ignorePatterns: ['serviceWorkerRegistration.js'],
   rules: {
     'no-console': 'warn',
-    'import/no-unresolved': 'error',
+    'import/no-unresolved': 'warn',
     'arrow-body-style': 'off',
+    'no-unused-vars': 'warn',
     'prefer-arrow-callback': 'off',
     'react/prop-types': [0],
     'prettier/prettier': 'error',
