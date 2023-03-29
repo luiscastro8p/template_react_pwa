@@ -2,13 +2,13 @@
     font-family: 'myFirstFont';
     src: url(../public/WalkwaySemiBold.ttf);
 }
-body{
+
+body {
     font-family: 'myFirstFont';
 }
 
 $gray-darker: #232735;
-$gray-dark: #3a3f51;
-$gray: #dde6e9;
+$gray-dark: #002636;
 $gray-light: #c7cedf;
 $gray-lighter: #edf1f2;
 
@@ -18,11 +18,12 @@ $purple: #7266ba;
 $pink: #f532e5;
 $yellow: #fad732;
 $green: #27c24c;
+$gray: #d1d5ca;
 
-$primary: #204349;
+$primary: #0d415d;
 $secondary: #007A79;
-$success: #27c24c;
+$success: #476e51;
+$dark: #0d415d;
 $info: #976F4F;
 $warning: #ff902b;
 $danger: #FF0000;
-$dark: #3a3f51;

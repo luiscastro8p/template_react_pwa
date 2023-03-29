@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './header/header';
 import Sidebar from './sidebar/sidebar';
 import './layout.scss';
-import routes from '../routes';
+import Arrayroutes from '../routes';
 
 const Layout = () => {
   const [view, setView] = React.useState(false);
@@ -13,11 +13,11 @@ const Layout = () => {
     <div>
       <Header toggleMenu={toggleMenu} />
 
-      <Sidebar view={view} handleView={toggleMenu} routes={routes} />
+      <Sidebar view={view} handleView={toggleMenu} routes={Arrayroutes} />
 
       <Suspense fallback={<div>Cargando...</div>}>
         <Routes>
-          {routes.map((route) => (
+          {Arrayroutes.map((route) => (
             <Route path={route.path} key={route.path} element={route.element} />
           ))}
         </Routes>
