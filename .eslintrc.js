@@ -18,7 +18,8 @@ module.exports = {
   plugins: ['react', 'react-hooks', 'prettier', 'no-unsanitized'],
   ignorePatterns: ['serviceWorkerRegistration.js'],
   rules: {
-    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'no-console': 'warn',
+    'import/no-unresolved': 'error',
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',
     'react/prop-types': [0],
