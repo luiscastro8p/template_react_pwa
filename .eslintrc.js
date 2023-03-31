@@ -25,6 +25,8 @@ module.exports = {
     'prefer-arrow-callback': 'off',
     'react/prop-types': [0],
     'prettier/prettier': 'error',
+    'max-classes-per-file': ['error', 3],
+    'import/no-extraneous-dependencies': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-unstable-nested-components': ['off'],
     'react/function-component-definition': [
@@ -33,6 +35,7 @@ module.exports = {
         namedComponents: ['arrow-function'],
         unnamedComponents: ['arrow-function']
       }
-    ]
+    ],
+    'no-restricted-syntax': 0
   }
 };

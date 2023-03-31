@@ -1,4 +1,4 @@
-.content-login{
+.content-login {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,11 +6,17 @@
     margin: 0px;
     padding: 0px;
     font-size: 10px;
-    .content-img{
+
+    .content-img {
         text-align: center;
-        img{
+
+        img {
             width: 100px;
         }
     }
-}
 
+    .loading {
+        height: 20px;
+        width: 20px;
+    }
+}

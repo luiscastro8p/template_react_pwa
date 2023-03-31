@@ -1,14 +1,16 @@
 import React from 'react';
 import { Route, Navigate, Routes, BrowserRouter } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Login from './login';
 import Sidebar from '../layout/index';
 
-export const AuthContext = React.createContext();
+export const PetitionContext = React.createContext();
 
 const PagesView = () => {
+  const [error, setError] = React.useState([]);
   return (
-    <AuthContext.Provider value="">
-      <BrowserRouter value="gola">
+    <PetitionContext.Provider value={(error, setError)}>
+      <BrowserRouter value="">
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
@@ -16,7 +18,8 @@ const PagesView = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
-    </AuthContext.Provider>
+      <ToastContainer />
+    </PetitionContext.Provider>
   );
 };
 

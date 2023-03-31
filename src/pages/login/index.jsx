@@ -1,11 +1,14 @@
 import React from 'react';
-import { Button, Col, Row, Form } from 'react-bootstrap';
+import { Button, Col, Row, Form, Spinner } from 'react-bootstrap';
 import './login.scss';
 import logo from '../../images/logo.png';
+import ApiConsumer from '../../services';
+
+const Auth = new ApiConsumer({ url: 'login/' });
 
 const LoginView = () => {
   const [form, setForm] = React.useState({
-    email: '',
+    username: '',
     password: ''
   });
   const [loading, setLoading] = React.useState(false);
@@ -16,27 +19,33 @@ const LoginView = () => {
       [id]: value
     });
   };
-  const submitForm = (e) => {
+
+  const submitForm = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    const data = await Auth.petition(form, 'POST');
+    if (data) {
+      setLoading(false);
+    }
   };
 
   return (
     <div>
       <Row className="content-login">
-        <Col sm={12} md={5} lg={5} xl={4} className="p-0">
+        <Col sm={12} md={6} lg={3} xl={3} className="p-0">
           <Form className="card p-4" onSubmit={(e) => submitForm(e)}>
             <div className="content-img">
               <img src={logo} className="img-fluid " alt="logo" />
             </div>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label className="m-0">Correo electronico</Form.Label>
+            <Form.Group className="mb-3" controlId="formBasicusername">
+              <Form.Label className="m-0">Nombre de usuario</Form.Label>
               <input
                 className="form-control"
-                type="email"
-                placeholder="Enter email"
-                id="email"
-                name="email"
-                value={form.email}
+                type="username"
+                placeholder="Nombre de usuario"
+                id="username"
+                name="username"
+                value={form.username}
                 autoComplete="off"
                 onChange={(e) => changeValue(e)}
               />
@@ -56,11 +65,16 @@ const LoginView = () => {
                 onChange={(e) => changeValue(e)}
               />
             </Form.Group>
-            {!loading && (
-              <Button variant="primary" type="submit">
-                Guardar informacion
-              </Button>
-            )}
+
+            <Button variant="primary" type="submit">
+              {!loading ? (
+                'Iniciar sesión'
+              ) : (
+                <Spinner animation="border" role="status" className="loading">
+                  <span className="visually-hidden">Loading...</span>
+                </Spinner>
+              )}
+            </Button>
 
             <Form.Label className="mt-5 text-center">
               Olvide mi contraseña
