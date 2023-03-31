@@ -3,24 +3,29 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 
+const baseURL = ``;
 function api(url, method, data) {
   const token = localStorage.getItem('token');
   return axios({
-    baseURL: `http://api.captiosys.mx/`,
+    baseURL,
     url,
     method,
     data,
     headers: {
+      'Accept-Language': 'es',
       Authorization: `Bearer ${token}`
     }
   });
 }
 function apiNoToken(url, method, data) {
   return axios({
-    baseURL: `http://api.captiosys.mx/`,
+    baseURL,
     url,
     method,
-    data
+    data,
+    headers: {
+      'Accept-Language': 'es'
+    }
   });
 }
 
