@@ -1,12 +1,16 @@
 import React from 'react';
 import { Button, Col, Row, Form, Spinner } from 'react-bootstrap';
 import './login.scss';
+import { useNavigate } from 'react-router-dom';
+
 import logo from '../../images/logo.png';
 import ApiConsumer from '../../services';
 
 const Auth = new ApiConsumer({ url: 'login/' });
 
 const LoginView = () => {
+  const navigate = useNavigate();
+
   const [form, setForm] = React.useState({
     username: '',
     password: ''
@@ -19,14 +23,19 @@ const LoginView = () => {
       [id]: value
     });
   };
-
+  const redirect = (link) => {
+    navigate(link, { replace: true });
+  };
   const submitForm = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const data = await Auth.petition(form, 'POST');
-    if (data) {
+    setTimeout(() => {
       setLoading(false);
-    }
+      redirect('/home');
+    }, [1000]);
+    /*   const data = await Auth.petition(form, 'POST');
+    if (data) {
+    } */
   };
 
   return (
